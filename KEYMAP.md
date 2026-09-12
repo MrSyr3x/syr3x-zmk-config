@@ -37,7 +37,7 @@
 ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │ TAB │  !  │  @  │  #  │  $  │  %  │   │  ^  │  &  │  *  │  (  │  )  │BSPC │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│CTRL │GLOBE│PREV │ PP  │NEXT │  ·  │   │  -  │  =  │  [  │  ]  │  \  │  `  │
+│CTRL │EMOJI│PREV │ PP  │NEXT │  ·  │   │  -  │  =  │  [  │  ]  │  \  │  `  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │SHFT │MUTE │VOL- │VOL+ │BRI- │BRI+ │   │  _  │  +  │  {  │  }  │  |  │  ~  │
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
@@ -46,7 +46,7 @@
 ```
 Media row moved down from `CTRL` row to `SHFT` row.
 `PREV`/`PP`/`NEXT` = `&kp C_PREV` / `&kp C_PP` / `&kp C_NEXT` (new)
-`GLOBE` = `&kp GLOBE` (new — ZMK's Apple Globe/Fn key support, [zmk#1938](https://github.com/zmkfirmware/zmk/pull/1938)). Tap pops the emoji picker like the real Mac Fn key; it does not work as a modifier for chords like Fn+H (that's hardware-only on real Apple keyboards, see [zmk#3217](https://github.com/zmkfirmware/zmk/issues/3217)).
+`EMOJI` = `&kp LC(LG(SPACE))` (Ctrl+Cmd+Space, macOS's real emoji-picker shortcut). Replaces an earlier attempt at `&kp GLOBE` (ZMK's emulated Apple Fn key, [zmk#1938](https://github.com/zmkfirmware/zmk/pull/1938)) — that keycode gets silently dropped unless `CONFIG_ZMK_HID_CONSUMER_REPORT_USAGES_FULL=y` is set, and is still flaky on macOS even then, so a plain modifier combo is the reliable choice.
 
 ## Layer 3 — Adjust (`LWR` + `RSE` held together, tri-layer)
 
